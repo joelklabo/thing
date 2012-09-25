@@ -1,4 +1,4 @@
-Thing::Application.routes.draw do
+X::Application.routes.draw do
   get "home/index"
 
   # The priority is based upon order of creation:
