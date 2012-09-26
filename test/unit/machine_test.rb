@@ -2,15 +2,15 @@ require 'test_helper'
 
 class MachineTest < ActiveSupport::TestCase
   test "Machine needs an address" do
-    machine = Machine.new :name => 'the maker', :kind => 'thinger'
+    machine = Machine.new :name => 'the maker', :kind => 'thinger', :user => users(:user_one)
     assert !machine.save, "You saved the post without an address"
   end
   test "Machine needs a name" do
-    machine = Machine.new :address => '123 butt ln', :kind => 'thingy'
+    machine = Machine.new :address => '123 butt ln', :kind => 'thingy', :user => users(:user_one)
     assert !machine.save, "You saved the post without a name"
   end
   test "Machine needs a kind" do
-    machine = Machine.new :address => '4 idiot road', :name => 'worst nightmare'
+    machine = Machine.new :address => '4 idiot road', :name => 'worst nightmare', :user => users(:user_one)
     assert !machine.save, "You saved the post without a kind"
   end
   test "Machine needs a user" do
