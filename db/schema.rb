@@ -11,22 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120925065255) do
+ActiveRecord::Schema.define(:version => 20120926063338) do
 
   create_table "file_items", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
+    t.string   "location"
     t.integer  "thing_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "file_items", ["thing_id"], :name => "index_file_items_on_thing_id"
-  add_index "file_items", ["user_id"], :name => "index_file_items_on_user_id"
 
   create_table "machines", :force => true do |t|
     t.string   "name"
-    t.text     "type"
+    t.text     "kind"
     t.text     "address"
     t.integer  "user_id"
     t.datetime "created_at", :null => false

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  type: MyText
-  address: MyText
-  user: 
+machine_one:
+  name: 'First Machine'
+  kind: 'Replicator 2'
+  address: '725 A Treat Ave'
+  user: user_one
 
-two:
-  name: MyString
-  type: MyText
-  address: MyText
-  user: 
+machine_two:
+  name: 'My Makibox'
+  kind: 'MakiBox'
+  address: '454 Lombard St. 4'
+  user: user_two
