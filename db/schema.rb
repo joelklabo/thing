@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120925064205) do
+ActiveRecord::Schema.define(:version => 20120925065255) do
 
-  create_table "item_files", :force => true do |t|
+  create_table "file_items", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "printable_item_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "thing_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "item_files", ["printable_item_id"], :name => "index_item_files_on_printable_item_id"
-  add_index "item_files", ["user_id"], :name => "index_item_files_on_user_id"
+  add_index "file_items", ["thing_id"], :name => "index_file_items_on_thing_id"
+  add_index "file_items", ["user_id"], :name => "index_file_items_on_user_id"
 
   create_table "machines", :force => true do |t|
     t.string   "name"
@@ -35,14 +35,15 @@ ActiveRecord::Schema.define(:version => 20120925064205) do
 
   add_index "machines", ["user_id"], :name => "index_machines_on_user_id"
 
-  create_table "printable_items", :force => true do |t|
+  create_table "things", :force => true do |t|
     t.string   "name"
+    t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "printable_items", ["user_id"], :name => "index_printable_items_on_user_id"
+  add_index "things", ["user_id"], :name => "index_things_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
