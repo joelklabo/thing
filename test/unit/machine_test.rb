@@ -17,6 +17,10 @@ class MachineTest < ActiveSupport::TestCase
     machine = Machine.new :address => 'boring route', :name => 'makey', :kind => 'makerbot'
     assert !machine.save, "You have no user"
   end
+  test "Machine should be able to save with all attributes" do 
+    machine = Machine.new :address => 'dumb place', :name => 'junky', :kind => 'makibox', :user => users(:user_one)
+    assert machine.save, "The machine instance did not save. Even with all attrs"
+  end
   test "Machine one should be associated with user one" do
     machine = machines(:machine_one)
     assert machine.user == users(:user_one), "User one is not associated with Machine one"
